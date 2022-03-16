@@ -1,29 +1,22 @@
-# Minta repó saját projektekhez
-## Használat
-* https://github.com/progmatic-java/oop-template
-* `Use this template` gombra kattintás
-* Repozitory nevének megadása
-* `Create repository from template` gombra kattintás
-* `Code` / clone..
-* Az idea elvileg felismeri, ha le tudod futtatni a `HelloWorldTest`-et, akkor működik is
-* Amennyiben nem, akkor a `pom.xml`-en jobb klikk, majd `Add as maven project`
 
-## Javaslatok, konvenciók
-* Ami nem kell, töröljétek nyugodtan
-* Tartsátok karban a README-t, legalább annyira hogy a projekt célja le legyen írva benne
-* Saját projekteknél nem kötelező a TDD módszertan használata, de ha úgy érzitek hogy segít, akkor bármelyik projektnél vagy házinál alkalmazhatjátok
-* Ha nem TDD-ztek, akkor is nyugodtan írjatok egy-egy tesztet, amennyiben az segíti a fejlesztést vagy a hibakeresést - vagy csak megnyugtat hogy tudjátok hogy jó az adott függvény / osztály
-## Tartalom
-### `.gitignore`
-Itt lehet beállítani, hogy mely fájlokat nem akarjuk feltölteni.
-### `pom.xml`
-A maven leíró fájl, ez a projekt összeállítását segíti.
-Erről fogunk részletesebben is tanulni a spring résznél,
-ott már szükségetek lesz a megértésére is, addig csak
-örüljetek hogy nem kell vele foglalkozni :)
-### `src/main/java/hu/progmatic/Main.java`
-Futtatható minta osztály, `main` metódussal
-### `src/main/java/hu/progmatic/HelloWorld.java`
-Minta osztály, teszttel.
-### `src/test/java/hu/progmatic/HelloWorldTest.java`
-Minta teszt.
+# Önkiszólgáló kassza project
+A projekt célja egy önkiszolgáló kassza webalkalmazás fejlesztése volt.
+A fejlesztés Spring keretrendszerben történt, az egyes felületek pedig a ThymeLeaf segítségével lettek megjelenítve.
+A designe megtervezésére és megalkotására CSS Bootstrap-et használtunk.  
+  
+<strong>Vásárlóval a belépés: Felh: customer, jelsz: customer</strong>
+## Adatbázis
+Az egyes adatokat MySql adatbázisban tároltuk.
+* https://www.mysql.com/
+#### Az alábbi ábra mutatja az adatbázis szerkezetét
+![](src/main/resources/database.png)
+## Vonalkód olvasás
+A vonalkód beolvasására az alábbi eszközt használtuk:  
+https://www.zebra.com/content/dam/zebra_new_ia/en-us/manuals/barcode-scanners/ls2208-product-reference-guide-en-us.pdf  
+A beolvasót úgy konfiguráltuk, hogy a következő módon küldeje a beolvasott információt:  
+* \<DATA\>\<SUFFIX\>,
+ahol suffix-nek "Enter" ütést választottunk. A felületbe történő integrálást JavaScript segítségével végeztük.
+## Tesztek
+* Unit tesztek
+* Spring boot tesztek
+* Spring MVC tesztek
